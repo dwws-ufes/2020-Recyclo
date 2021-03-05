@@ -1,9 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015">
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <compose xsi:type="frameweb:EntityModel" name="Entity Model">
-    <packagedElement xsi:type="frameweb:DomainPackage" name="br.ufes.informatica.recyclo.core.domain"/>
+    <packagedElement xsi:type="frameweb:DomainPackage" name="br.ufes.informatica.recyclo.core.domain">
+      <packagedElement xsi:type="frameweb:DomainClass" name="Usuario" powertypeExtent="//@compose.0/br.ufes.informatica.recyclo.core.domain/UsuarioColetor //@compose.0/br.ufes.informatica.recyclo.core.domain/UsuarioGerador">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="email" visibility="private" size="100">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="senha" visibility="private" size="30">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nome" visibility="private" size="100">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="saldoCarbono" visibility="private" isNull="true" owlEquivalentProperty="">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="dataCadastro" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="permissao" visibility="private" size="30">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Coletor">
+        <generalization xsi:type="frameweb:DomainGeneralization"/>
+        <generalization xsi:type="frameweb:DomainGeneralization" generalizationSet="//@compose.0/br.ufes.informatica.recyclo.core.domain/UsuarioColetor"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="meioDeColeta" visibility="private" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/MeioDeColeta"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Gerador">
+        <generalization xsi:type="frameweb:DomainGeneralization"/>
+        <generalization xsi:type="frameweb:DomainGeneralization" generalizationSet="//@compose.0/br.ufes.informatica.recyclo.core.domain/UsuarioGerador"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="avaliacao" visibility="private" isNull="true">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Byte"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainGeneralizationSet" name="UsuarioColetor" powertype="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario" generalization="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor/@generalization.1"/>
+      <packagedElement xsi:type="frameweb:DomainGeneralizationSet" name="UsuarioGerador" powertype="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario" generalization="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador/@generalization.1"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Municipio">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="UF" visibility="private" size="2">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nomeMunicipio" visibility="private" size="150">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="atende" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende">
+          <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Agendamento">
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioCombinado" visibility="private" isNull="true">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioDaColeta" visibility="private" isNull="true">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioCancelamento" visibility="private" isNull="true">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Oferta">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="qtdeMaterial" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioInicial" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioFinal" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Material">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="taxaConversao" visibility="private" isNull="true">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="tipoMaterial" visibility="private" size="50">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="cadastra" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="efetua" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="efetua" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="ehOfertado" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Material" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado">
+          <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="ehColetado" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Material" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado">
+          <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/possui/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Enumeration" name="MeioDeColeta" visibility="private">
+        <ownedLiteral name="VeiculoMotorizado" classifier="//@compose.0/br.ufes.informatica.recyclo.core.domain/MeioDeColeta"/>
+        <ownedLiteral name="Carroça" classifier="//@compose.0/br.ufes.informatica.recyclo.core.domain/MeioDeColeta"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Endereco">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="Bairro" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="Logradouro" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="Numero" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="Complemento" visibility="private" isNull="true"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="PontoReferencia" visibility="private" isNull="true"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="CEP" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Source //@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco" association="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
+      </packagedElement>
+    </packagedElement>
   </compose>
   <compose xsi:type="frameweb:PersistenceModel" name="Persistence Model">
-    <packagedElement xsi:type="frameweb:PersistencePackage" name="br.ufes.informatica.recyclo.core.persistence"/>
+    <packagedElement xsi:type="frameweb:PersistencePackage" name="br.ufes.informatica.recyclo.core.persistence">
+      <packagedElement xsi:type="frameweb:DAOInterface" name="UsuarioDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="UsuarioDAOJPA">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="verificaEmail" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario">
+          <ownedParameter name="email">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="ColetorDAOJPA">
+        <generalization xsi:type="frameweb:DAOGeneralization"/>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="realizarAgendamento" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento">
+          <ownedParameter name="Oferta" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterOfertas" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta">
+          <ownedParameter name="municipio">
+            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+          <ownedParameter name="tipoMaterial"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="ColetorDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/ColetorDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/ColetorDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="GeradorDAOJPA">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="retornaOfertas" visibility="private" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta">
+          <ownedParameter name="Gerador" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="GeradorDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/GeradorDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/GeradorDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="AgendamentoDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="AgendamentoDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/AgendamentoDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/AgendamentoDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="MaterialDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="MaterialDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="OfertaDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="OfertaDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/OfertaDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/OfertaDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="MunicipioDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="Interface DAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MunicipioDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/Interface%20DAO"/>
+    </packagedElement>
   </compose>
 </frameweb:FramewebProject>
