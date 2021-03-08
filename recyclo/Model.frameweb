@@ -215,7 +215,7 @@
     <packagedElement xsi:type="frameweb:PersistencePackage" name="br.ufes.informatica.recyclo.core.persistence">
       <packagedElement xsi:type="frameweb:DAOInterface" name="UsuarioDAO"/>
       <packagedElement xsi:type="frameweb:DAOClass" name="UsuarioDAOJPA">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="verificaEmail" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="verificarEmail" visibility="private" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario">
           <ownedParameter name="email">
             <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
           </ownedParameter>
@@ -225,38 +225,95 @@
       <packagedElement xsi:type="frameweb:DAORealization"/>
       <packagedElement xsi:type="frameweb:DAOClass" name="ColetorDAOJPA">
         <generalization xsi:type="frameweb:DAOGeneralization"/>
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="realizarAgendamento" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento">
-          <ownedParameter name="Oferta" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta"/>
-        </ownedOperation>
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterOfertas" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta">
-          <ownedParameter name="municipio">
-            <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/List"/>
-            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
-          </ownedParameter>
-          <ownedParameter name="tipoMaterial"/>
-        </ownedOperation>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DAOInterface" name="ColetorDAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/ColetorDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/ColetorDAO"/>
-      <packagedElement xsi:type="frameweb:DAOClass" name="GeradorDAOJPA">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="retornaOfertas" visibility="private" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta">
-          <ownedParameter name="Gerador" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador"/>
-        </ownedOperation>
-      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOClass" name="GeradorDAOJPA"/>
       <packagedElement xsi:type="frameweb:DAOInterface" name="GeradorDAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/GeradorDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/GeradorDAO"/>
-      <packagedElement xsi:type="frameweb:DAOClass" name="AgendamentoDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="AgendamentoDAOJPA">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterAgendasCanceladas">
+          <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterAgendasNaoRealizadas">
+          <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterAgendasRealizadas">
+          <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="realizarAgendamento" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento">
+          <ownedParameter name="coletor" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor"/>
+          <ownedParameter name="oferta" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterAgendasGerador">
+          <ownedParameter name="gerador" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterAgendasColetor">
+          <ownedParameter name="coletor" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+      </packagedElement>
       <packagedElement xsi:type="frameweb:DAOInterface" name="AgendamentoDAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/AgendamentoDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/AgendamentoDAO"/>
-      <packagedElement xsi:type="frameweb:DAOClass" name="MaterialDAOJPA"/>
-      <packagedElement xsi:type="frameweb:DAOInterface" name="MaterialDAO"/>
-      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAO"/>
-      <packagedElement xsi:type="frameweb:DAOClass" name="OfertaDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="MaterialDAOJPA">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterMaterialColetor">
+          <ownedParameter name="coletor" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="OfertaDAOJPA">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterOfertasSemAgendamento">
+          <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterOfertasColetadas">
+          <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterOfertasNaoColetadas">
+          <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterOfertasGerador">
+          <ownedParameter name="gerador" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+      </packagedElement>
       <packagedElement xsi:type="frameweb:DAOInterface" name="OfertaDAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/OfertaDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/OfertaDAO"/>
-      <packagedElement xsi:type="frameweb:DAOClass" name="MunicipioDAOJPA"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="MunicipioDAOJPA">
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterMunicipiosColetor">
+          <ownedParameter name="coletor" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor">
+            <defaultValue xsi:type="uml:LiteralString" value=""/>
+          </ownedParameter>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
+        </ownedOperation>
+      </packagedElement>
       <packagedElement xsi:type="frameweb:DAOInterface" name="Interface DAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MunicipioDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/Interface%20DAO"/>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="MaterialDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MaterialDAO"/>
     </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:NavigationModel" name="Navigation Model">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="/core/cadastro/">
+      <packagedElement xsi:type="frameweb:Page" name="index">
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="coletorForm"/>
+      <packagedElement xsi:type="frameweb:NavigationAssociation">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAssociation">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="br.ufes.informatica.recyclo.core.controller"/>
   </compose>
 </frameweb:FramewebProject>
