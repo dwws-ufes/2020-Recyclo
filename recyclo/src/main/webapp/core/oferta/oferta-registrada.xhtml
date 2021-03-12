@@ -9,18 +9,18 @@
 	
 
     <ui:define name="title">
-        <h:outputText value="#{msgsCore['oferta.title']}" />
+        <h:outputText value="#{msgsCore['featureName.title']}" />
     </ui:define>
 
     <ui:define name="description">
-        <h:outputText value="#{msgsCore['oferta.title.description']}" />
+        <h:outputText value="#{msgsCore['featureName.title.description']}" />
     </ui:define>
 
     <ui:define name="body">
-		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['oferta.title']}" />
-		<h:outputText id="oferta.material" value="#{ofertaController.oferta.material}" />
-		<h:outputText id="oferta.qtdeMaterial" value="#{ofertaController.oferta.qtdeMaterial}" />
-		<h:outputText id="oferta.horarioInicial" value="#{ofertaController.oferta.horarioInicial}" />
-		<h:outputText id="oferta.horarioFinal" value="#{ofertaController.oferta.horarioFinal}" />
+		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['featureName.title']}" />
+		<h:outputText id="oferta.material" value="#{controllerName.oferta.material}" />
+		<h:outputText id="oferta.qtdeMaterial" value="#{controllerName.oferta.qtdeMaterial}" />
+		<h:outputText id="oferta.horarioInicial" value="#{controllerName.oferta.horarioInicial}" />
+		<h:outputText id="oferta.horarioFinal" value="#{controllerName.oferta.horarioFinal}" />
     </ui:define>
 </ui:composition>

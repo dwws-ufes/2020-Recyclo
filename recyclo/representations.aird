@@ -14,15 +14,15 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']"/>
         <target xmi:type="frameweb:FramewebProject" href="Model.frameweb#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_j8p7MHlIEeuN7ppha05MsA" name="FrameWebEntityModel" repPath="#_j8kboHlIEeuN7ppha05MsA" changeId="b14e4a1b-8bf2-45c1-9042-fb07f0c5ec3c">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_j8p7MHlIEeuN7ppha05MsA" name="FrameWebEntityModel" repPath="#_j8kboHlIEeuN7ppha05MsA" changeId="4f18663b-d674-4029-aa98-c62840a436ae">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']"/>
         <target xmi:type="frameweb:EntityModel" href="Model.frameweb#//@compose.0"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u3yhIHlKEeuN7ppha05MsA" name="FrameWebPersistenceModel" repPath="#_u3wE4HlKEeuN7ppha05MsA" changeId="ff9f89f7-74ca-4af8-ba9d-35ab2e4582a8">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u3yhIHlKEeuN7ppha05MsA" name="FrameWebPersistenceModel" repPath="#_u3wE4HlKEeuN7ppha05MsA" changeId="42281827-54e2-4a8b-a760-7d22a6f42d43">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']"/>
         <target xmi:type="frameweb:PersistenceModel" href="Model.frameweb#//@compose.1"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_3owNkHwVEeuWQOywhUwU_A" name="Method Diagram" repPath="#_3osjMHwVEeuWQOywhUwU_A" changeId="cfc578b5-bbbb-4497-bc29-b3d75f326fb7">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_3owNkHwVEeuWQOywhUwU_A" name="Method Diagram" repPath="#_3osjMHwVEeuWQOywhUwU_A" changeId="9357f9eb-4b19-459b-b70f-f68ca34100f5">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
         <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAOJPA/verificarEmail"/>
       </ownedRepresentationDescriptors>
@@ -689,22 +689,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZT0Utn2wEeuOoNE2Kc4mGg" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZT0Ut32wEeuOoNE2Kc4mGg" id="(0.5,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_b8z6wH2xEeuOoNE2Kc4mGg" type="4001" element="_b8qJ4H2xEeuOoNE2Kc4mGg" source="_wf3XUHn8EeuwIo0VSONbLw" target="_eKtAmH2vEeuOoNE2Kc4mGg">
-          <children xmi:type="notation:Node" xmi:id="_b8z6xH2xEeuOoNE2Kc4mGg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b8z6xX2xEeuOoNE2Kc4mGg" x="14" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_b80h0H2xEeuOoNE2Kc4mGg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b80h0X2xEeuOoNE2Kc4mGg" x="6" y="14"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_b80h0n2xEeuOoNE2Kc4mGg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b80h032xEeuOoNE2Kc4mGg" x="21" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_b8z6wX2xEeuOoNE2Kc4mGg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_b8z6wn2xEeuOoNE2Kc4mGg" fontName="Sans" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_b8z6w32xEeuOoNE2Kc4mGg" points="[-162, 0, 493, 0]$[-560, 0, 95, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b80h1H2xEeuOoNE2Kc4mGg" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b80h1X2xEeuOoNE2Kc4mGg" id="(0.5,0.5)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_OdMegH2yEeuOoNE2Kc4mGg" type="4001" element="_OdA4mH2yEeuOoNE2Kc4mGg" source="_R2JNQHoCEeuwIo0VSONbLw" target="_eKtAmH2vEeuOoNE2Kc4mGg">
           <children xmi:type="notation:Node" xmi:id="_OdMehH2yEeuOoNE2Kc4mGg" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OdMehX2yEeuOoNE2Kc4mGg" x="-1" y="10"/>
@@ -721,6 +705,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OdMein2yEeuOoNE2Kc4mGg" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OdMei32yEeuOoNE2Kc4mGg" id="(0.5,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_EB2jIINnEeu6-e8qa_Mj0A" type="4001" element="_EAX8eINnEeu6-e8qa_Mj0A" source="_wf3XUHn8EeuwIo0VSONbLw" target="_eKtAmH2vEeuOoNE2Kc4mGg">
+          <children xmi:type="notation:Node" xmi:id="_EB9Q0INnEeu6-e8qa_Mj0A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EB9Q0YNnEeu6-e8qa_Mj0A" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EB_GAINnEeu6-e8qa_Mj0A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EB_GAYNnEeu6-e8qa_Mj0A" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ECAUIINnEeu6-e8qa_Mj0A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ECAUIYNnEeu6-e8qa_Mj0A" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_EB2jIYNnEeu6-e8qa_Mj0A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_EB2jIoNnEeu6-e8qa_Mj0A" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EB2jI4NnEeu6-e8qa_Mj0A" points="[-162, -7, 567, 22]$[-707, -29, 22, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ECFzsINnEeu6-e8qa_Mj0A" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ECFzsYNnEeu6-e8qa_Mj0A" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_j9j6IHlIEeuN7ppha05MsA" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -736,7 +736,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wfRhcHn8EeuwIo0VSONbLw" name="Usuario" outgoingEdges="_b8qJ4H2xEeuOoNE2Kc4mGg" incomingEdges="_Iqv8EHn_EeuwIo0VSONbLw _KbW-EHn_EeuwIo0VSONbLw">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wfRhcHn8EeuwIo0VSONbLw" name="Usuario" outgoingEdges="_EAX8eINnEeu6-e8qa_Mj0A" incomingEdges="_Iqv8EHn_EeuwIo0VSONbLw _KbW-EHn_EeuwIo0VSONbLw">
         <target xmi:type="frameweb:DomainClass" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario"/>
         <semanticElements xmi:type="frameweb:DomainClass" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1008,7 +1008,7 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='Enumeration']/@subNodeMappings[name='EnumerationLiteral']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_eKgzUH2vEeuOoNE2Kc4mGg" name="Endereco" outgoingEdges="_ZTm5YH2wEeuOoNE2Kc4mGg" incomingEdges="_b8qJ4H2xEeuOoNE2Kc4mGg _OdA4mH2yEeuOoNE2Kc4mGg">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_eKgzUH2vEeuOoNE2Kc4mGg" name="Endereco" outgoingEdges="_ZTm5YH2wEeuOoNE2Kc4mGg" incomingEdges="_OdA4mH2yEeuOoNE2Kc4mGg _EAX8eINnEeu6-e8qa_Mj0A">
         <target xmi:type="frameweb:DomainClass" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco"/>
         <semanticElements xmi:type="frameweb:DomainClass" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1043,7 +1043,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@subNodeMappings[name='DomainAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_pQawwH2vEeuOoNE2Kc4mGg" name=" - complemento :  {null}">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_pQawwH2vEeuOoNE2Kc4mGg" name=" - complemento : String {null}">
           <target xmi:type="frameweb:DomainAttribute" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco/complemento"/>
           <semanticElements xmi:type="frameweb:DomainAttribute" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/Endereco/complemento"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_pQbX0H2vEeuOoNE2Kc4mGg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -1088,8 +1088,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_LbB14HoAEeuwIo0VSONbLw" name="atende" sourceNode="_IAvLMHn-EeuwIo0VSONbLw" targetNode="_rS74EHn_EeuwIo0VSONbLw" beginLabel="0..*" endLabel="1..*">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/listaColetores"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/listaMunicipios"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/Vocabulary%20Constraint"/>
@@ -1104,8 +1104,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Na24QHoDEeuwIo0VSONbLw" name="cadastra" sourceNode="_NFMjkHn-EeuwIo0VSONbLw" targetNode="_R18Y8HoCEeuwIo0VSONbLw" beginLabel="1" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/gerador"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/listaOfertas"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/Vocabulary%20Constraint"/>
@@ -1120,8 +1120,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_-VhbaHoDEeuwIo0VSONbLw" name="efetua" sourceNode="_NFMjkHn-EeuwIo0VSONbLw" targetNode="_uwTE4HoBEeuwIo0VSONbLw" beginLabel="1" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/gerador"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/listaAgendamentos"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua/Vocabulary%20Constraint"/>
@@ -1136,8 +1136,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="__LKC8HoDEeuwIo0VSONbLw" name="efetua" sourceNode="_IAvLMHn-EeuwIo0VSONbLw" targetNode="_uwTE4HoBEeuwIo0VSONbLw" beginLabel="1" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/coletor"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/listaAgendamentos"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/efetua.1/Vocabulary%20Constraint"/>
@@ -1152,8 +1152,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_E3KjkHoEEeuwIo0VSONbLw" name="ehOfertado" sourceNode="_WEmKsHoCEeuwIo0VSONbLw" targetNode="_R18Y8HoCEeuwIo0VSONbLw" beginLabel="1..*" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/listaMateriais"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/listaOfertas"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehOfertado/Vocabulary%20Constraint"/>
@@ -1168,8 +1168,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_FqkWYHoEEeuwIo0VSONbLw" name="ehColetado" sourceNode="_WEmKsHoCEeuwIo0VSONbLw" targetNode="_IAvLMHn-EeuwIo0VSONbLw" beginLabel="1..*" endLabel="0..*">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/listaMateriais"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/listaColetores"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/ehColetado/Vocabulary%20Constraint"/>
@@ -1184,8 +1184,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_80iHFX2jEeuOoNE2Kc4mGg" name="possui" sourceNode="_uwTE4HoBEeuwIo0VSONbLw" targetNode="_R18Y8HoCEeuwIo0VSONbLw" beginLabel="0..*" endLabel="1">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/listaAgendamentos"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/oferta"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.1/Vocabulary%20Constraint"/>
@@ -1200,8 +1200,8 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ZTm5YH2wEeuOoNE2Kc4mGg" name="possui" sourceNode="_eKgzUH2vEeuOoNE2Kc4mGg" targetNode="_rS74EHn_EeuwIo0VSONbLw" beginLabel="0..*" endLabel="1">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/listaEnderecos"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/municipio"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/Vocabulary%20Constraint"/>
@@ -1213,35 +1213,35 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_b8qJ4H2xEeuOoNE2Kc4mGg" name="possui" sourceNode="_wfRhcHn8EeuwIo0VSONbLw" targetNode="_eKgzUH2vEeuOoNE2Kc4mGg" beginLabel="1" endLabel="1">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_OdA4mH2yEeuOoNE2Kc4mGg" name="possui" sourceNode="_R18Y8HoCEeuwIo0VSONbLw" targetNode="_eKgzUH2vEeuOoNE2Kc4mGg" beginLabel="1" endLabel="1">
       <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3"/>
       <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Target"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/oferta"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/endereco"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Source%20Constraint"/>
       <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Target%20Constraint"/>
       <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.3/Vocabulary%20Constraint"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_b8qw0H2xEeuOoNE2Kc4mGg" size="2" centered="Both" strokeColor="69,69,69">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_b8qw0X2xEeuOoNE2Kc4mGg" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_b8qw032xEeuOoNE2Kc4mGg" showIcon="false"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_b8qw0n2xEeuOoNE2Kc4mGg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_OdA4mH2yEeuOoNE2Kc4mGg" name="possui" sourceNode="_R18Y8HoCEeuwIo0VSONbLw" targetNode="_eKgzUH2vEeuOoNE2Kc4mGg" beginLabel="1" endLabel="1">
-      <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
-      <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Target"/>
-      <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Source%20Constraint"/>
-      <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Target%20Constraint"/>
-      <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Vocabulary%20Constraint"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_OdBfYH2yEeuOoNE2Kc4mGg" size="2" centered="Both" strokeColor="69,69,69">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_OdBfYX2yEeuOoNE2Kc4mGg" showIcon="false"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_OdBfY32yEeuOoNE2Kc4mGg" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_OdBfYn2yEeuOoNE2Kc4mGg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_EAX8eINnEeu6-e8qa_Mj0A" name="possui" sourceNode="_wfRhcHn8EeuwIo0VSONbLw" targetNode="_eKgzUH2vEeuOoNE2Kc4mGg" beginLabel="1" endLabel="1">
+      <target xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
+      <semanticElements xmi:type="frameweb:DomainAssociation" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/usuario"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/endereco"/>
+      <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Source%20Constraint"/>
+      <semanticElements xmi:type="frameweb:DomainConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Target%20Constraint"/>
+      <semanticElements xmi:type="frameweb:VocabularyConstraints" href="Model.frameweb#//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.4/Vocabulary%20Constraint"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_EAZKkINnEeu6-e8qa_Mj0A" size="2" centered="Both" strokeColor="69,69,69">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_EAZKkYNnEeu6-e8qa_Mj0A" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_EAZKk4NnEeu6-e8qa_Mj0A" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_EAZKkoNnEeu6-e8qa_Mj0A" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
@@ -1725,7 +1725,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebPersistenceModel']/@defaultLayer/@containerMappings[name='PersistencePackage']/@subContainerMappings[name='DAOClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_e8-iQHwTEeuWQOywhUwU_A" name=" - verificarEmail (email : String) : Usuario">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_e8-iQHwTEeuWQOywhUwU_A" name=" + verificarEmail (email : String) : Usuario">
           <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAOJPA/verificarEmail"/>
           <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAOJPA/verificarEmail"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_e8_JUHwTEeuWQOywhUwU_A" showIcon="false" labelAlignment="LEFT" labelPosition="node">
@@ -2039,7 +2039,7 @@
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_3pDIgHwVEeuWQOywhUwU_A" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_3pDIgXwVEeuWQOywhUwU_A"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3pBTUHwVEeuWQOywhUwU_A" name="verificaEmail" incomingEdges="_AyojMHwWEeuWQOywhUwU_A" width="10" height="3" resizeKind="EAST_WEST">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3pBTUHwVEeuWQOywhUwU_A" name="verificarEmail" incomingEdges="_AyojMHwWEeuWQOywhUwU_A" width="10" height="3" resizeKind="EAST_WEST">
       <target xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAOJPA/verificarEmail"/>
       <semanticElements xmi:type="frameweb:DAOMethod" href="Model.frameweb#//@compose.1/br.ufes.informatica.recyclo.core.persistence/UsuarioDAOJPA/verificarEmail"/>
       <ownedStyle xmi:type="diagram:Square" uid="_3pB6YHwVEeuWQOywhUwU_A" showIcon="false" labelPosition="node" width="10" height="3" color="246,139,139">
