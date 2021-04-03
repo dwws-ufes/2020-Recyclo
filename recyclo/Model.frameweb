@@ -21,6 +21,9 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="permissao" visibility="private" size="30">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Coletor">
         <generalization xsi:type="frameweb:DomainGeneralization"/>
@@ -32,12 +35,18 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="cnpj" visibility="private" size="14" isNull="true">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Gerador">
         <generalization xsi:type="frameweb:DomainGeneralization"/>
         <generalization xsi:type="frameweb:DomainGeneralization" generalizationSet="//@compose.0/br.ufes.informatica.recyclo.core.domain/UsuarioGerador"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="avaliacao" visibility="private" isNull="true">
-          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Byte"/>
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainGeneralizationSet" name="UsuarioColetor" powertype="//@compose.0/br.ufes.informatica.recyclo.core.domain/Usuario" generalization="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor/@generalization.1"/>
@@ -48,6 +57,9 @@
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nomeMunicipio" visibility="private" size="150">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="atende" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/atende/listaColetores //@compose.0/br.ufes.informatica.recyclo.core.domain/atende/listaMunicipios">
@@ -73,6 +85,9 @@
         <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioCancelamento" visibility="private" isNull="true">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Oferta">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="qtdeMaterial" visibility="private">
@@ -84,6 +99,9 @@
         <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioFinal" visibility="private">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Date"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Material">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="taxaConversao" visibility="private" isNull="true">
@@ -91,6 +109,9 @@
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="tipoMaterial" visibility="private" size="50">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="cadastra" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/gerador //@compose.0/br.ufes.informatica.recyclo.core.domain/cadastra/listaOfertas">
@@ -200,6 +221,9 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="cep" visibility="private">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="ID">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/listaEnderecos //@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/municipio">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/br.ufes.informatica.recyclo.core.domain/possui.2/listaEnderecos"/>
@@ -260,9 +284,9 @@
           <ownedParameter name="municipio" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Municipio"/>
           <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
         </ownedOperation>
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="realizarAgendamento" methodType="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento">
-          <ownedParameter name="coletor" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor"/>
-          <ownedParameter name="oferta" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Oferta"/>
+        <ownedOperation xsi:type="frameweb:DAOMethod" name="salvarAgendamento">
+          <ownedParameter name="agendamento" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Agendamento"/>
+          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
         </ownedOperation>
         <ownedOperation xsi:type="frameweb:DAOMethod" name="obterAgendasGerador">
           <ownedParameter name="gerador" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Gerador"/>
@@ -302,14 +326,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:DAOInterface" name="OfertaDAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/OfertaDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/OfertaDAO"/>
-      <packagedElement xsi:type="frameweb:DAOClass" name="MunicipioDAOJPA">
-        <ownedOperation xsi:type="frameweb:DAOMethod" name="obterMunicipiosColetor">
-          <ownedParameter name="coletor" type="//@compose.0/br.ufes.informatica.recyclo.core.domain/Coletor">
-            <defaultValue xsi:type="uml:LiteralString" value=""/>
-          </ownedParameter>
-          <methodType xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Collection"/>
-        </ownedOperation>
-      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOClass" name="MunicipioDAOJPA"/>
       <packagedElement xsi:type="frameweb:DAOInterface" name="MunicipioDAO"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MunicipioDAOJPA" supplier="//@compose.1/br.ufes.informatica.recyclo.core.persistence/MunicipioDAO"/>
       <packagedElement xsi:type="frameweb:DAOInterface" name="MaterialDAO"/>
