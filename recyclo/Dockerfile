@@ -11,17 +11,16 @@ RUN chown jboss /opt/recyclo
 USER jboss
 
 # Instalando dependências do wildfly pro mysql
-RUN mkdir -p /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main
-COPY ./mysql-connector-java-8.0.17.jar /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main/
-COPY ./module.xml /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main/
+RUN mkdir -p /opt/jboss/wildfly/modules/com/mysql/main/
+COPY ./mysql-connector-java-8.0.23.jar /opt/jboss/wildfly/modules/com/mysql/main/
+COPY ./module.xml /opt/jboss/wildfly/modules/com/mysql/main/
 
 # Configurando o servidor
 COPY ./standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
 
 # Copiando projeto
 WORKDIR /opt/recyclo
-COPY ./pom.xml /opt/recyclo/
-COPY ./src /opt/recyclo/
+COPY . /opt/recyclo/
 
 # Criando o usuário no wildfly
 RUN /opt/jboss/wildfly/bin/add-user.sh -u 'admin' -p 'password'
