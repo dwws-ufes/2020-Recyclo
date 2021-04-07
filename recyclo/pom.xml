@@ -31,6 +31,10 @@
 		<url>http://dev.nemo.inf.ufes.br/maven2</url>
 		<layout>default</layout>
 	</repository>
+    <repository>
+      <id>my-alternate-repository</id>
+      <url>https://mvnrepository.com/</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -51,6 +55,27 @@
       <artifactId>jbutler-wp</artifactId>
       <version>1.2.7</version>
 	</dependency>
+  <!-- https://mvnrepository.com/artifact/com.github.adminfaces/admin-template -->
+  <dependency>
+      <groupId>com.github.adminfaces</groupId>
+      <artifactId>admin-template</artifactId>
+      <version>1.2.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.primefaces</groupId>
+    <artifactId>primefaces</artifactId>
+    <version>8.0</version>
+  </dependency>
+  <dependency>
+      <groupId>org.omnifaces</groupId>
+      <artifactId>omnifaces</artifactId>
+      <version>2.7.1</version>
+  </dependency>
+  <dependency>
+      <groupId>com.github.adminfaces</groupId>
+      <artifactId>admin-theme</artifactId>
+      <version>1.2.0</version>
+  </dependency>
   </dependencies>
 
   <build>

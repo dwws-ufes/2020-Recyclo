@@ -20,7 +20,10 @@ COPY ./standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
 
 # Copiando projeto
 WORKDIR /opt/recyclo
-COPY . /opt/recyclo/
+COPY ./pom.xml /opt/recyclo/pom.xml
+RUN mvn dependency:go-offline dependency:resolve-plugins clean package
+COPY ./src /opt/recyclo/src
+RUN mvn clean package
 
 # Criando o usuário no wildfly
 RUN /opt/jboss/wildfly/bin/add-user.sh -u 'admin' -p 'password'

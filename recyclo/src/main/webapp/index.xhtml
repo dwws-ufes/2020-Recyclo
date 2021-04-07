@@ -1,11 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</head>
-<body>
-<h2>Hello, Recyclo!</h2>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/admin.xhtml">
+
+    <ui:define name="head">
+        <title>Recyclo</title>
+    </ui:define>
+
+    <ui:define name="logo-lg">
+        ReCyclo
+    </ui:define>
+
+    <ui:define name="logo-mini">
+        RC
+    </ui:define>
+
+    <ui:define name="menu">
+        <ul class="sidebar-menu">
+            <li>
+                <p:link href="/index.xhtml" onclick="clearBreadCrumbs()">
+                    <i class="fa fa-home"></i>
+                    <span>Início</span>
+                </p:link>
+            </li>
+	        <li class="header">
+	            Geral
+	        </li>
+	        <!-- <li>
+	            <p:link href="/car-list.xhtml">
+	                <i class="fa fa-car"></i>
+	                <span>Cars</span>
+	            </p:link>
+	        </li> -->
+        </ul>
+    </ui:define>
+
+    <!-- <ui:define name="top-menu">
+        <ui:include src="/includes/top-bar.xhtml"/>
+    </ui:define> -->
+
+    <ui:define name="title">
+        <h2 class="align-center">
+            Bem vindo ao<span class="text-aqua"> <i><a style="text-transform: none;text-decoration: none"> Recyclo</a></i></span>!
+            <br/>
+            <small>Recycling the cyclos.
+            </small>
+        </h2>
+    </ui:define>
+
+    <ui:define name="description">
+        A page description
+    </ui:define>
+
+    <ui:define name="body">
+    	<h2>Page body</h2>
+        <img SRC="https://media.giphy.com/media/KKOMG9EB7VqBq/giphy.gif"/>
+    </ui:define>
+
+    <ui:define name="footer">
+          <a target="_blank"
+           href="https://github.com/adminfaces/">
+            Copyright (C) 2021 - ReCyclo
+        </a>
+
+        <div class="pull-right hidden-xs" style="color: gray">
+            <i>1.0.0</i>
+        </div>
+    </ui:define>
+
+
+</ui:composition>
