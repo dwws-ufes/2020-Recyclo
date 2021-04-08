@@ -22,11 +22,11 @@ ul.dropdown-menu > li.user-header {
 }
 
 a.dropdown-toggle {
-    background-color: #3c8dbc!important;
+    background-color: #3c8dbc;
 }
 
 a#logout {
-    color: #3c8dbc!important;
+    color: #3c8dbc;
     background: transparent;
 }
 
