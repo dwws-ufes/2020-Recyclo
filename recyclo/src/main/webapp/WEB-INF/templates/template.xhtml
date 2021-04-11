@@ -23,7 +23,7 @@
     <ui:define name="menu">
         <ul class="sidebar-menu">
             <li>
-                <p:link href="/index.xhtml" onclick="clearBreadCrumbs()">
+                <p:link href="/recyclo/index.xhtml" onclick="clearBreadCrumbs()">
                     <i class="fa fa-home"></i>
                     <span>Início</span>
                 </p:link>
@@ -31,14 +31,20 @@
 	        <li class="header">
 	            Geral
 	        </li>
-	        <li>
-	            <p:link href="/core/login/login.xhtml">
-	                <i class="fa fa-car"></i>
-	                <span>Perfil</span>
+            <li>
+                <p:link href="core/oferta/incluir-oferta.xhtml">
+                    <i class="fa fa-recycle"></i>
+	                <span>Incluir oferta</span>
 	            </p:link>
-	        </li>
+            </li>
+            <li>
+                <p:link href="core/mapa/visualizar-mapa.xhtml">
+                    <i class="fa fa-map"></i>
+	                <span>Visualizar Mapa</span>
+	            </p:link>
+            </li>
         </ul>
-     </ui:define>
+    </ui:define>
 
     <ui:define name="top-menu">
         <ui:include src="/includes/top-bar.xhtml"/>

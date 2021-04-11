@@ -39,6 +39,7 @@ public class LogonMB extends AdminSession implements Serializable {
     private String email;
     private String password;
     private boolean remember;
+    private String currentUserName;
     @Inject
     private AdminConfig adminConfig;
     @Inject
@@ -60,6 +61,7 @@ public class LogonMB extends AdminSession implements Serializable {
     	// Se o usuário está cadastrado, redireciona para a página principal.
     	if (usuarioLogado != null) {
 	        currentUser = email;
+            currentUserName = usuarioLogado.getNome();
 	        utils.addDetailMessage("Login efetuado com sucesso como <b>" + usuario.getEmail() + "</b>");
 	        Faces.getExternalContext().getFlash().setKeepMessages(true);
 	        Faces.redirect(adminConfig.getIndexPage());
@@ -105,5 +107,13 @@ public class LogonMB extends AdminSession implements Serializable {
 
     public void setCurrentUser(String currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public String getCurrentUserName() {
+        return currentUserName;
+    }
+
+    public void setCurrentUserName(String currentUserName) {
+        this.currentUserName = currentUserName;
     }
 }
