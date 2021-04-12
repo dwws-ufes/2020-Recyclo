@@ -23,7 +23,7 @@
     <ui:define name="menu">
         <ul class="sidebar-menu">
             <li>
-                <p:link href="/index.xhtml" onclick="clearBreadCrumbs()">
+                <p:link href="/recyclo/index.xhtml" onclick="clearBreadCrumbs()">
                     <i class="fa fa-home"></i>
                     <span>Início</span>
                 </p:link>
@@ -32,9 +32,21 @@
 	            Geral
 	        </li>
 	        <li>
-	            <p:link href="/core/login/login.xhtml">
-	                <i class="fa fa-car"></i>
-	                <span>Perfil</span>
+	            <p:link href="/recyclo/core/cadastro/meu-cadastro.xhtml">
+	                <i class="fa fa-book"></i>
+	                <span>Meu cadastro</span>
+	            </p:link>
+	        </li>
+	        <li>
+	            <p:link rendered="#{logonMB.usuarioGerador}" href="/recyclo/core/oferta/minhas-ofertas.xhtml">
+	                <i class="fa fa-briefcase"></i>
+	                <span>Minhas ofertas</span>
+	            </p:link>
+	        </li>
+	        <li>
+	            <p:link rendered="#{logonMB.usuarioColetor}" href="/recyclo/core/oferta/meus-agendamentos.xhtml">
+	                <i class="fa fa-briefcase"></i>
+	                <span>Meus agendamentos</span>
 	            </p:link>
 	        </li>
         </ul>

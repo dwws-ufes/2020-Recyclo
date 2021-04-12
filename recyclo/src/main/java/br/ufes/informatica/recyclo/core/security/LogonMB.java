@@ -1,23 +1,16 @@
 package br.ufes.informatica.recyclo.core.security;
 
-import java.io.IOException;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Specializes;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.omnifaces.util.Faces;
-
-import com.github.adminfaces.template.config.AdminConfig;
 import com.github.adminfaces.template.session.AdminSession;
 
-import br.ufes.informatica.recyclo.core.application.LoginService;
+import br.ufes.informatica.recyclo.core.domain.Coletor;
+import br.ufes.informatica.recyclo.core.domain.Gerador;
 import br.ufes.informatica.recyclo.core.domain.Usuario;
-import br.ufes.informatica.recyclo.utils.Utils;
 
 /**
  * Created by rmpestano on 12/20/14.
@@ -36,43 +29,21 @@ import br.ufes.informatica.recyclo.utils.Utils;
 public class LogonMB extends AdminSession implements Serializable {
 
     private String currentUser;
+    private boolean logado = false;
     private String email;
     private String password;
     private boolean remember;
-    @Inject
-    private AdminConfig adminConfig;
-    @Inject
-    private Utils utils;
-    @Inject
-    LoginService loginService;
-
-
-    public void login() throws IOException {
-    	
-    	// Inicializa um objeto da classe "Usuario".
-    	Usuario usuario = new Usuario();
-    	usuario.setEmail(this.email);
-    	usuario.setSenha(this.password);
-    	
-    	// Chama a classe de servico para verificar se o usuário está cadastrado.
-    	Usuario usuarioLogado = loginService.efetuarLogin(usuario);
-    	
-    	// Se o usuário está cadastrado, redireciona para a página principal.
-    	if (usuarioLogado != null) {
-	        currentUser = email;
-	        utils.addDetailMessage("Login efetuado com sucesso como <b>" + usuario.getEmail() + "</b>");
-	        Faces.getExternalContext().getFlash().setKeepMessages(true);
-	        Faces.redirect(adminConfig.getIndexPage());
-    	} else {
-    		// Se o usuário não está cadastrado, permanece na página de login e apresenta mensagem de erro.
-    		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "E-mail e/ou senha incorreto(s)", "E-mail e/ou senha incorreto(s)"));
-    	}
-    }
+    private boolean usuarioColetor = false;
+    private boolean usuarioGerador = false;
+    private Usuario usuario;
+    private Coletor coletor;
+    private Gerador gerador;
+  
 
     @Override
     public boolean isLoggedIn() {
 
-        return currentUser != null;
+        return this.logado;
     }
 
     public String getEmail() {
@@ -106,4 +77,53 @@ public class LogonMB extends AdminSession implements Serializable {
     public void setCurrentUser(String currentUser) {
         this.currentUser = currentUser;
     }
+
+	public boolean isLogado() {
+		return logado;
+	}
+
+	public void setLogado(boolean logado) {
+		this.logado = logado;
+	}
+
+	public boolean isUsuarioColetor() {
+		return usuarioColetor;
+	}
+
+	public void setUsuarioColetor(boolean usuarioColetor) {
+		this.usuarioColetor = usuarioColetor;
+	}
+
+	public boolean isUsuarioGerador() {
+		return usuarioGerador;
+	}
+
+	public void setUsuarioGerador(boolean usuarioGerador) {
+		this.usuarioGerador = usuarioGerador;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Coletor getColetor() {
+		return coletor;
+	}
+
+	public void setColetor(Coletor coletor) {
+		this.coletor = coletor;
+	}
+
+	public Gerador getGerador() {
+		return gerador;
+	}
+
+	public void setGerador(Gerador gerador) {
+		this.gerador = gerador;
+	}
+
 }

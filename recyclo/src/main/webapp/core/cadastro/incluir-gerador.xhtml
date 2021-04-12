@@ -7,7 +7,7 @@
     xmlns:adm="http://github.com/adminfaces">
 	
     <h:head>
-        <title>Cadastro de Coletor</title>
+        <title>Cadastro de Gerador</title>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -81,7 +81,7 @@
                     
                     <!--  Nome -->
                     <div class="form-group has-feedback">
-                        <p:inputText value="#{coletorController.coletor.usuario.nome}" type="text" styleClass="form-control"
+                        <p:inputText value="#{geradorController.gerador.usuario.nome}" type="text" styleClass="form-control"
                                      placeholder="Nome" required="true"
                                      requiredMessage="Informe seu nome completo."/>
                         <i class="fa fa-user form-control-feedback"></i>
@@ -89,7 +89,7 @@
                     
                     <!-- E-mail -->
                     <div class="form-group has-feedback">
-                        <p:inputText value="#{coletorController.coletor.usuario.email}" type="email" styleClass="form-control"
+                        <p:inputText value="#{geradorController.gerador.usuario.email}" type="email" styleClass="form-control"
                                      placeholder="E-mail" required="true"
                                      requiredMessage="Informe seu e-mail."/>
                         <i class="fa fa-envelope form-control-feedback"></i>
@@ -97,24 +97,15 @@
                     
                     <!-- Senha -->
                     <div class="form-group has-feedback">
-                        <p:inputText value="#{coletorController.coletor.usuario.senha}" type="password" styleClass="form-control"
+                        <p:inputText value="#{geradorController.gerador.usuario.senha}" type="password" styleClass="form-control"
                                      placeholder="Senha" required="true"
                                      requiredMessage="Defina uma senha."/>
                         <i class="fa fa-lock form-control-feedback"></i>
                     </div>
-                 
-                 	<!-- Meio de Coleta -->
-                 	<div class="form-group has-feedback">
-	                    <p:selectOneMenu id="meioColeta" value="#{coletorController.coletor.meioDeColeta}" required="true" requiredMessage="Selecione o meio de coleta.">
-		                    <f:selectItem itemLabel="Meio de coleta" itemValue=""/>
-		                    <f:selectItem itemLabel="Motorizado" itemValue="Motorizado"/>
-		                    <f:selectItem itemLabel="Não motorizado" itemValue="NaoMotorizado"/>
-		                </p:selectOneMenu>
-	                </div>
 	                
 	                <!-- Documento-->
                  	<div class="form-group has-feedback">
-	                    <p:selectOneMenu id="tipoDocumento" value="#{coletorController.coletor.usuario.tipoPessoa}" required="true" requiredMessage="Selecione o documento.">
+	                    <p:selectOneMenu id="tipoDocumento" value="#{geradorController.gerador.usuario.tipoPessoa}" required="true" requiredMessage="Selecione o documento.">
 		                    <f:selectItem itemLabel="Documento" itemValue=""/>
 		                    <f:selectItem itemLabel="CPF" itemValue="Fisica"/>
 		                    <f:selectItem itemLabel="CNPJ" itemValue="Juridica"/>
@@ -123,7 +114,7 @@
 	                
 	                <!-- CPF ou CNPJ -->
                     <div class="form-group has-feedback">
-                        <p:inputText value="#{coletorController.documento}" type="text" styleClass="form-control"
+                        <p:inputText value="#{geradorController.documento}" type="text" styleClass="form-control"
                                      placeholder="CPF ou CNPJ (apenas números)" required="true"
                                      requiredMessage="Informe o número do documento."/>
                         <i class="fa fa-id-card form-control-feedback"></i>
@@ -132,7 +123,7 @@
                     <!--  Cadastrar-se -->
                     <div class="row">
                         <div class="col-xs-12">
-                            <p:commandButton styleClass="btn btn-success btn-block" action="#{coletorController.incluirColetor}"
+                            <p:commandButton styleClass="btn btn-success btn-block" action="#{geradorController.incluirGerador}"
                                              value="Cadastrar-se!"/>
                         </div>
                     </div>

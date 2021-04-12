@@ -32,5 +32,13 @@ public class UsuarioDAOJPA extends BaseJPADAO<Usuario> implements UsuarioDAO {
 							.setParameter("senha", usuario.getSenha())
 							.getSingleResult();
 	}
+	
+	public int verificaEmailRegistrado(Usuario usuario) {
+		String jpql = "select u from Usuario u where u.email = :email";
+		int quantidade = entityManager.createQuery(jpql, Usuario.class)
+				.setParameter("email", usuario.getEmail())
+				.getResultList().size();
+		return quantidade;
+	}
 
 }
