@@ -20,14 +20,21 @@
     	
     	<p:dataTable var="oferta" value="#{OfertaController.getOfertasGerador}">
             <p:column headerText="Material">
-                <!-- <h:outputText value="#{oferta.material}" /> -->
-                <h:outputText value="1" />
+                <h:outputText value="#{oferta.material.tipoMaterial}" />
             </p:column>
 
-            <p:column headerText="Endereço">
-                <!-- <h:outputText value="#{oferta.endereco}" /> -->
-                <h:outputText value="2" />
+            <p:column headerText="Quantidade">
+                <h:outputText value="#{oferta.qtdeMaterial}" />
             </p:column>
+
+            <p:column headerText="Horário Inicial">
+                <h:outputText value="#{oferta.horarioInicial}" />
+            </p:column>
+
+            <p:column headerText="Horário Final">
+                <h:outputText value="#{oferta.horarioFinal}" />
+            </p:column>
+
         </p:dataTable>
         
     </ui:define>
