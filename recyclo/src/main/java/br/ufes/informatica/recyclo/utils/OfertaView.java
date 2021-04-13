@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,19 +27,13 @@ public class OfertaView implements Serializable{
     @Inject
 	private LogonMB logonMB;
 
+    @EJB
     private OfertaController ofertaController;
-
-    // OfertaDAOJPA service;
-    // LoginController login;
 
     @PostConstruct
     public void init() {
         Usuario usuario = logonMB.getUsuario();
         Collection ofertas_col = ofertaController.getOfertasGerador(usuario);
-        System.out.println("Services funcionou");
-        // Collection ofertas_col = oferta_c.getOfertasGerador(usuario);
-        // System.out.println(ofertas_col);
-        // ofertas = new ArrayList(ofertas_col);
         ofertas = new ArrayList();
     }
 
