@@ -18,7 +18,7 @@
     <ui:define name="body">
     	<h3>Minhas ofertas</h3>
     	
-    	<p:dataTable var="oferta" value="#{dtOfertaView.ofertas}">
+    	<p:dataTable var="oferta" value="#{OfertaController.getOfertasGerador}">
             <p:column headerText="Material">
                 <!-- <h:outputText value="#{oferta.material}" /> -->
                 <h:outputText value="1" />
