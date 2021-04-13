@@ -1,9 +1,13 @@
 package br.ufes.informatica.recyclo.core.application;
 
+import java.util.Collection;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import br.ufes.informatica.recyclo.core.domain.Gerador;
 import br.ufes.informatica.recyclo.core.domain.Oferta;
+import br.ufes.informatica.recyclo.core.domain.Usuario;
 import br.ufes.informatica.recyclo.core.persistence.EnderecoDAO;
 import br.ufes.informatica.recyclo.core.persistence.MaterialDAO;
 import br.ufes.informatica.recyclo.core.persistence.OfertaDAO;
@@ -31,6 +35,11 @@ public class OfertaServiceBean implements OfertaService {
 	public void incluirOferta(Oferta oferta) {
 		// FIXME: auto-generated method stub
 		return;
+	}
+
+	@Override
+	public Collection getOfertasGerador(Usuario usuario) {
+		return ofertaDAO.obterOfertasGerador(usuario.getId());
 	}
 
 }

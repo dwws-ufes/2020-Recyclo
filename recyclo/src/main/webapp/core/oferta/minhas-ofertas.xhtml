@@ -18,7 +18,18 @@
     <ui:define name="body">
     	<h3>Minhas ofertas</h3>
     	
-    	
+    	<p:dataTable var="oferta" value="#{dtOfertaView.ofertas}">
+            <p:column headerText="Material">
+                <!-- <h:outputText value="#{oferta.material}" /> -->
+                <h:outputText value="1" />
+            </p:column>
+
+            <p:column headerText="Endereço">
+                <!-- <h:outputText value="#{oferta.endereco}" /> -->
+                <h:outputText value="2" />
+            </p:column>
+        </p:dataTable>
+        
     </ui:define>
     
     

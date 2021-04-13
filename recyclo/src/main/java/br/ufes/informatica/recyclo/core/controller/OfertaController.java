@@ -38,6 +38,11 @@ public class OfertaController extends JSFController {
 		return;
 	}
 
+	/** Getter for service. */
+	public OfertaService getService() {
+		return ofertaService;
+	}
+
 	/** Getter for gerador. */
 	public Gerador getGerador() {
 		return gerador;
