@@ -34,10 +34,10 @@ public class OfertaView implements Serializable{
     @PostConstruct
     public void init() {
         Usuario usuario = logonMB.getUsuario();
-        OfertaService oferta_c = ofertaController.getService();
+        Collection ofertas_col = ofertaController.getOfertasGerador(usuario);
         System.out.println("Services funcionou");
-        Collection ofertas_col = oferta_c.getOfertasGerador(usuario);
-        System.out.println(ofertas_col);
+        // Collection ofertas_col = oferta_c.getOfertasGerador(usuario);
+        // System.out.println(ofertas_col);
         // ofertas = new ArrayList(ofertas_col);
         ofertas = new ArrayList();
     }
