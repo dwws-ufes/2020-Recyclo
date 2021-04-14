@@ -2,8 +2,6 @@ package br.ufes.informatica.recyclo.core.controller;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -21,7 +19,6 @@ import br.ufes.informatica.recyclo.core.domain.Endereco;
 import br.ufes.informatica.recyclo.core.domain.Gerador;
 import br.ufes.informatica.recyclo.core.domain.Material;
 import br.ufes.informatica.recyclo.core.domain.Oferta;
-import br.ufes.informatica.recyclo.core.domain.Usuario;
 import br.ufes.informatica.recyclo.core.security.LogonMB;
 import br.ufes.informatica.recyclo.utils.Utils;
 
@@ -82,9 +79,7 @@ public class OfertaController extends JSFController {
 	}
 	
 	public List<Oferta> getOfertasGerador(){
-		Collection col = ofertaService.getOfertasGerador(logonMB.getUsuario());
-		ofertasGerador = new ArrayList(col);
-		return ofertasGerador;
+		return ofertaService.getOfertasGerador(logonMB.getGerador());
 	}
 
 	/** Getter for gerador. */

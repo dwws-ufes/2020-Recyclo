@@ -22,6 +22,8 @@
         <h1>Incluir oferta de material</h1><br/>
 
         <h:form>
+
+        	<!-- 
             <p:selectOneMenu id="city" value="#{ofertaController.material.tipoMaterial}" style="margin-bottom: 15px; background-color: #fff">
                 <f:selectItem itemLabel="Material" itemValue="Nenhum" noSelectionOption="true"/>
                 <f:selectItem itemLabel="Vidro" itemValue="Vidro"/>
@@ -30,10 +32,17 @@
                 <f:selectItem itemLabel="Papel" itemValue="Papel"/>
                 <f:selectItem itemLabel="Bateria" itemValue="Bateria"/>
                 <f:selectItem itemLabel="Óleo" itemValue="Óleo'"/>
-            </p:selectOneMenu>
+            </p:selectOneMenu> -->
+            
+            <div class="form-group has-feedback">
+	            <p:outputLabel for="listaMateriais" value="Material: "/>
+	            <h:selectOneMenu id="listaMateriais" value="#{ofertaController.oferta.material}" converter="omnifaces.SelectItemsConverter">
+				    <f:selectItems value="#{materialController.listaMateriais}" var="material" itemValue="#{material}" itemLabel="#{material.tipoMaterial}" />
+				</h:selectOneMenu>
+			</div>
 
             <div class="form-group has-feedback">
-                <p:inputText value="#{ofertaController.oferta.qtdeMaterial}" type="text" styleClass="form-control"
+                <p:inputText id="qtdeMaterial" value="#{ofertaController.oferta.qtdeMaterial}" type="text" styleClass="form-control"
                                 placeholder=" Quantidade de Material (em Kg)" required="true"
                                 requiredMessage="Insira um valor em Kgs."/>
                 <i class="fa fa-cubes form-control-feedback" style="font-size: 18px"></i>
@@ -42,13 +51,13 @@
             <div class="form-group has-feedback">
                 <p:outputLabel for="time1" value="Data Inicial: "/>
                 <p:datePicker id="time1" value="#{ofertaController.oferta.horarioInicial}" showTime="true"/>
-                <i class="fa fa-clock-o form-control-feedback" style="font-size: 18px"></i>
+                <!--  <i class="fa fa-clock-o form-control-feedback" style="font-size: 18px"></i>- -->
             </div>
 
             <div class="form-group has-feedback">
                 <p:outputLabel for="time2" value="Data Final: "/>
                 <p:datePicker id="time2" value="#{ofertaController.oferta.horarioFinal}" showTime="true"/>
-                <i class="fa fa-clock-o form-control-feedback" style="font-size: 18px"></i>
+                <!-- <i class="fa fa-clock-o form-control-feedback" style="font-size: 18px"></i> -->
             </div>
 
             <div class="row">
