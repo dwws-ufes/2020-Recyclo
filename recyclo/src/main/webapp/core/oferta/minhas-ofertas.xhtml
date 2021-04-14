@@ -36,6 +36,30 @@
             </p:column>
 
         </p:dataTable>
+
+        <script>
+            $(document).ready(function(){
+                $("td:nth-child(3)").each(function(){ 
+                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
+                    let dataFormatada = (
+                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
+                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
+                        data.getFullYear() +
+                     " " + data.getHours() + ":" + data.getMinutes(); 
+                    $(this).html(dataFormatada)
+                })
+
+                $("td:nth-child(4)").each(function(){ 
+                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
+                    let dataFormatada = (
+                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
+                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
+                        data.getFullYear() +
+                     " " + data.getHours() + ":" + data.getMinutes(); 
+                    $(this).html(dataFormatada)
+                })
+            })
+        </script>
         
     </ui:define>
     

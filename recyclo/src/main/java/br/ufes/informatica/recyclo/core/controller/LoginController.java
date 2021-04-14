@@ -60,6 +60,7 @@ public class LoginController extends JSFController {
     		logonMB.setLogado(true);
     		logonMB.setCurrentUser(usuarioLogado.getNome());
     		logonMB.setUsuario(usuarioLogado);
+			logonMB.setEmail(usuarioLogado.getEmail());
     		if (usuarioLogado.getPermissao().equals("Coletor")) {
     			logonMB.setUsuarioColetor(true);
     			logonMB.setColetor(usuarioLogado.getColetor());
