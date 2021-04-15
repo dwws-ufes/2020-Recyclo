@@ -45,15 +45,5 @@ public class GeradorServiceBean implements GeradorService {
 		return true;
 		
 	}
-	
-	public boolean alterarGerador(Gerador gerador) {
-		
-		// Chama o usuarioDAO para alterar as informacoes associadas à tabela Usuario.
-		usuarioDAO.merge(gerador.getUsuario());
-		
-		// Retorna true se o gerador foi alterado.
-		return true;
-		
-	}
 
 }
