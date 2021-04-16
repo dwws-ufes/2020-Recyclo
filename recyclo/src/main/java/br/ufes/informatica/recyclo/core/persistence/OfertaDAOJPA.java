@@ -56,5 +56,11 @@ public class OfertaDAOJPA extends BaseJPADAO<Oferta> implements OfertaDAO {
 							.setParameter("gerador", IdGerador)
 							.getResultList();
 	}
+	
+	public List<Oferta> obterListaOfertasDisponiveis() {
+		String jpql = "select o from Oferta o where o.coletado = FALSE";
+		return entityManager.createQuery(jpql, Oferta.class)
+							.getResultList();
+	}
 
 }

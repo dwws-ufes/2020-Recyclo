@@ -16,9 +16,9 @@
     </ui:define>
 
     <ui:define name="body">
-    	<h3>Minhas ofertas</h3>
+    	<h3>Ofertas de material disponíveis</h3>
     	
-    	<p:dataTable var="oferta" value="#{ofertaController.ofertasGerador}">
+    	<p:dataTable var="oferta" value="#{ofertaController.listaOfertasDisponiveis}">
     		<p:column headerText="Código da oferta de material">
                 <h:outputText value="#{oferta.id}" />
             </p:column>
@@ -39,16 +39,8 @@
                 <h:outputText value="#{oferta.horarioFinal}" />
             </p:column>
             
-            <p:column headerText="Coletada">
-                <h:outputText value="#{oferta.coletado == true ? 'Sim' : 'Não'}" />
-            </p:column>
-            
-            <p:column headerText="Data da coleta">
-                <h:outputText value="#{oferta.agendamento.horarioDaColeta}" />
-            </p:column>
-            
-            <p:column headerText="Coletor">
-                <h:outputText value="#{oferta.agendamento.coletor.usuario.nome}" />
+            <p:column headerText="Gerador">
+                <h:outputText value="#{oferta.gerador.usuario.nome}" />
             </p:column>
 
         </p:dataTable>
@@ -73,17 +65,6 @@
                         data.getFullYear() +
                      " " + data.getHours() + ":" + data.getMinutes(); 
                     $(this).html(dataFormatada)
-                })
-
-                $("td:nth-child(7)").each(function(){
-                	if (!$(this).is(':empty')){
-                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
-                    let dataFormatada = (
-                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
-                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
-                        data.getFullYear() +
-                     " " + data.getHours() + ":" + data.getMinutes(); 
-                    $(this).html(dataFormatada)}
                 })
             })
         </script>

@@ -40,5 +40,9 @@ public class OfertaServiceBean implements OfertaService {
 	public List<Oferta> getOfertasGerador(Gerador gerador) {
 		return ofertaDAO.obterOfertasGerador(gerador.getId());
 	}
+	
+	public List<Oferta> obterListaOfertasDisponiveis() {
+		return ofertaDAO.obterListaOfertasDisponiveis();
+	}
 
 }

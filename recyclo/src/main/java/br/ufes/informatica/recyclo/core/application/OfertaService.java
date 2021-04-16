@@ -16,5 +16,7 @@ public interface OfertaService extends Serializable {
 	public boolean incluirOferta(Oferta oferta);
 
 	public List<Oferta> getOfertasGerador(Gerador gerador);
+	
+	public List<Oferta> obterListaOfertasDisponiveis();
 
 }
