@@ -7,7 +7,7 @@ Para executar este aplicativo localmente você precisar ter o Docker instalado e
 sudo apt install docker.io
 
 
-Depois, para o docker iniciar sempre com a máquina, esse comando:
+Depois, para o Docker iniciar sempre com a máquina, você deve utilizar este comando:
 
 sudo systemctl enable --now docker
 
@@ -18,7 +18,8 @@ sudo docker run hello-world
 
 
 Estando tudo ok, já é possível usar o docker na máquina. 
-Para fazer o deploy da aplicação, é preciso fazer o pull do repositório, ir para o branch docker-v2, e acessar a pasta recyclo, que é onde estão os arquivos de configuração do docker e os demais arquivos do projeto. Dentro dessa pasta, para subir a aplicação, precisa executar:
+
+Para fazer o deploy da aplicação, é preciso fazer o pull do repositório, ir para o branch docker-v2, e acessar a pasta recyclo, que é onde estão os arquivos de configuração do docker e os demais arquivos do projeto. Dentro dessa pasta, para subir a aplicação, é preciso executar:
 
 sudo docker-compose up
 
