@@ -19,4 +19,5 @@ public interface OfertaService extends Serializable {
 	
 	public List<Oferta> obterListaOfertasDisponiveis();
 
+	public String jsonOfertasEnderecos();
 }

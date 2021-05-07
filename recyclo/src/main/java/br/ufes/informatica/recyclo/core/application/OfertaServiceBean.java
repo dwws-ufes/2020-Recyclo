@@ -4,7 +4,12 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
 
+import br.ufes.informatica.recyclo.core.domain.Endereco;
 import br.ufes.informatica.recyclo.core.domain.Gerador;
 import br.ufes.informatica.recyclo.core.domain.Oferta;
 import br.ufes.informatica.recyclo.core.persistence.EnderecoDAO;
@@ -43,6 +48,30 @@ public class OfertaServiceBean implements OfertaService {
 	
 	public List<Oferta> obterListaOfertasDisponiveis() {
 		return ofertaDAO.obterListaOfertasDisponiveis();
+	}
+
+	@Override
+	public String jsonOfertasEnderecos() {
+		List<Oferta> ofertas = ofertaDAO.obterListaOfertasDisponiveis();
+		JsonArrayBuilder builder = Json.createArrayBuilder();
+		for (Oferta o: ofertas){
+			Endereco e = o.getGerador().getUsuario().getEndereco();
+			String mat = o.getMaterial().getTipoMaterial();
+			String qtd = o.getQtdeMaterial().toString();
+			String end = e.getEnderecoCompleto();
+			System.out.println(e);
+			
+			JsonObject jsobject = Json.createObjectBuilder()
+				.add("material", mat)
+				.add("quantidade", qtd)
+				.add("endereco", end)
+				.build();
+			
+			builder = builder.add(jsobject);
+		}
+		JsonArray array = builder.build();
+
+		return array.toString();
 	}
 
 }

@@ -30,7 +30,6 @@
             };
             function initMap() {
                 const ufes = { lat: -20.2778, lng: -40.3043 };
-                const ruaDaLama = { lat: -20.298519, lng: -40.302512 };
                 const map = new google.maps.Map(document.getElementById("map"), {
                     zoom: 13,
                     center: ufes,
@@ -56,19 +55,37 @@
                     scale: 2,
                     anchor: new google.maps.Point(0, 0),
                 };
-                const marker = new google.maps.Marker({
-                    position: ufes,
-                    map: map,
-                    title: 'UFES - 30Kg de Papel',
-                    label: 'UFES - 30Kg de Papel',
-                    icon: ofertaSvgMarker
-                });
-                const marker2 = new google.maps.Marker({
-                    position: ruaDaLama,
-                    map: map,
-                    title: 'Ponto de Coleta',
-                    label: 'Ponto de Coleta',
-                    icon: coletaSvgMarker
+                
+                var jsonOfertasEnderecos = "#{ofertaController.jsonStringOfertaEndereco}"
+                console.log(jsonOfertasEnderecos)
+                var ofertaEnderecoArray = JSON.parse(jsonOfertasEnderecos);
+                
+                ofertaEnderecoArray.map((e) => {
+                    $.ajax({
+                        type: 'GET',
+                        url: "https://nominatim.openstreetmap.org/search",
+                        data: {
+                            q: e.endereco,
+                            format: 'json',
+                            polygon: 1,
+                            addressdetails: 1
+                        },
+                        async: false,
+                        success: function(data, status){
+                            var jsonData = JSON.parse(data)[0];
+                            new google.maps.Marker({
+                                position: {
+                                    lat: jsonData.lat,
+                                    lng: jsonData.lon
+                                },
+                                map: map,
+                                title: e.material,
+                                label: `${e.material} ${e.quantidade}`,
+                                icon: ofertaSvgMarker
+                            });
+                        }
+                    });
+                    return marker;
                 });
             }
         </script>
