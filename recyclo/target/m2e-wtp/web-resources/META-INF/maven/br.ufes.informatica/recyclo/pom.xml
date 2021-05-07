@@ -82,6 +82,15 @@
       <artifactId>admin-theme</artifactId>
       <version>1.2.0</version>
   </dependency>
+  
+  <!-- Jena -->
+  <dependency>
+	<groupId>org.apache.jena</groupId>
+	<artifactId>apache-jena-libs</artifactId>
+	<type>pom</type>
+	<version>4.0.0</version>
+  </dependency>
+  
   </dependencies>
 
   <build>
