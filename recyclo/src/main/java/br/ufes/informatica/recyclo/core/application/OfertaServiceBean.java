@@ -58,7 +58,14 @@ public class OfertaServiceBean implements OfertaService {
 			Endereco e = o.getGerador().getUsuario().getEndereco();
 			String mat = o.getMaterial().getTipoMaterial();
 			String qtd = o.getQtdeMaterial().toString();
-			String end = e.getEnderecoCompleto();
+			// String end = e.getEnderecoCompleto();
+			String end;
+			if (e == null) {
+				// end = "Espírito Santo, Vitória, Fernando Ferrari";
+				continue;
+			} else {
+				end = e.getEnderecoCompleto();
+			}
 			System.out.println(e);
 			
 			JsonObject jsobject = Json.createObjectBuilder()
@@ -67,6 +74,7 @@ public class OfertaServiceBean implements OfertaService {
 				.add("endereco", end)
 				.build();
 			
+			System.out.println("\033[31m" + jsobject.toString());
 			builder = builder.add(jsobject);
 		}
 		JsonArray array = builder.build();
