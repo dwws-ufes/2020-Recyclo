@@ -18,6 +18,8 @@
     <ui:define name="body">
     	<h3>Ofertas de material disponíveis</h3>
     	
+    	<p:button value="RDF/XML" href="#{facesContext.externalContext.requestContextPath}/dados/ofertas-disponiveis" />
+    	
     	<p:dataTable var="oferta" value="#{ofertaController.listaOfertasDisponiveis}">
     		<p:column headerText="Código da oferta de material">
                 <h:outputText value="#{oferta.id}" />
@@ -41,6 +43,10 @@
             
             <p:column headerText="Gerador">
                 <h:outputText value="#{oferta.gerador.usuario.nome}" />
+            </p:column>
+            
+            <p:column headerText="RDF/XML">
+                <p:button value="RDF/XML" href="#{facesContext.externalContext.requestContextPath}/dados/ofertas-disponiveis?id=#{oferta.id}"/>
             </p:column>
 
         </p:dataTable>
@@ -68,6 +74,16 @@
                 })
             })
         </script>
+        
+        <style>
+        
+        	h3 {
+        		display: inline-block;
+        		margin-bottom: 1em;
+        		margin-right: 1em;
+        	}
+        
+        </style>
         
     </ui:define>
     

@@ -44,5 +44,9 @@ public class OfertaServiceBean implements OfertaService {
 	public List<Oferta> obterListaOfertasDisponiveis() {
 		return ofertaDAO.obterListaOfertasDisponiveis();
 	}
+	
+	public Oferta retornarOferta(Long idOferta) {
+		return ofertaDAO.retrieveById(idOferta);
+	}
 
 }

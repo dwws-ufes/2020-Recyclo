@@ -18,5 +18,7 @@ public interface OfertaService extends Serializable {
 	public List<Oferta> getOfertasGerador(Gerador gerador);
 	
 	public List<Oferta> obterListaOfertasDisponiveis();
+	
+	public Oferta retornarOferta(Long idOferta);
 
 }
