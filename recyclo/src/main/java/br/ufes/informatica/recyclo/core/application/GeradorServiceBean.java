@@ -41,6 +41,9 @@ public class GeradorServiceBean implements GeradorService {
 		// Chama o geradorDAO para armzazenar as informacoes associadas à tabela Gerador.
 		geradorDAO.save(gerador);
 		
+		// Chama o enderecoDAO para armazenar as informacoes associadas à tabela Endereco.
+		enderecoDAO.save(gerador.getUsuario().getEndereco());
+		
 		// Retorna true se o gerador foi cadastrado.
 		return true;
 		
