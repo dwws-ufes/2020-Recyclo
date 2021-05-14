@@ -47,6 +47,10 @@
                 <h:outputText value="#{oferta.agendamento.horarioDaColeta}" />
             </p:column>
             
+            <p:column headerText="Endereço da coleta">
+                <h:outputText value="#{oferta.gerador.usuario.endereco.enderecoCompleto}" />
+            </p:column>
+            
             <p:column headerText="Coletor">
                 <h:outputText value="#{oferta.agendamento.coletor.usuario.nome}" />
             </p:column>

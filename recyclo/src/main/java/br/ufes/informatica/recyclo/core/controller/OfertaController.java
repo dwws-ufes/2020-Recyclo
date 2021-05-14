@@ -51,6 +51,8 @@ public class OfertaController extends JSFController {
 	
 	private List<Oferta> listaOfertasDisponiveis;
 
+	private String jsonStringOfertaEndereco;
+
 	public OfertaController(){
 		oferta = new Oferta();
 		material = new Material();
@@ -131,6 +133,14 @@ public class OfertaController extends JSFController {
 
 	public void setListaOfertasDisponiveis(List<Oferta> listaOfertasDisponiveis) {
 		this.listaOfertasDisponiveis = listaOfertasDisponiveis;
+	}
+
+	public String getJsonStringOfertaEndereco() {
+		return ofertaService.jsonOfertasEnderecos();
+	}
+
+	public void setJsonStringOfertaEndereco(String jsonStringOfertaEndereco) {
+		this.jsonStringOfertaEndereco = jsonStringOfertaEndereco;
 	}
 
 }

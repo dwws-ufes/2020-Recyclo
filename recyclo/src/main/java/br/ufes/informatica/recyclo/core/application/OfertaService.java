@@ -21,4 +21,5 @@ public interface OfertaService extends Serializable {
 	
 	public Oferta retornarOferta(Long idOferta);
 
+	public String jsonOfertasEnderecos();
 }

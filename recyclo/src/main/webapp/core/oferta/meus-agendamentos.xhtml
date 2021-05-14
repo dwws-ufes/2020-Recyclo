@@ -42,6 +42,10 @@
             <p:column headerText="Data da coleta">
                 <h:outputText value="#{agendamento.horarioDaColeta}" />
             </p:column>
+            
+            <p:column headerText="Endereço da coleta">
+                <h:outputText value="#{agendamento.gerador.usuario.endereco.enderecoCompleto}" />
+            </p:column>
 
         </p:dataTable>
         

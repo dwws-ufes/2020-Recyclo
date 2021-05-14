@@ -54,6 +54,7 @@ public class GeradorController extends JSFController {
 	public GeradorController() {
 		Usuario usuario = new Usuario();
 		gerador = new Gerador();
+		endereco = new Endereco();
 		gerador.setUsuario(usuario);
 	}
 	
@@ -80,6 +81,7 @@ public class GeradorController extends JSFController {
 		}
 		String senhaCriptografada = CriptografiaSenha.encriptPassword(gerador.getUsuario().getSenha());
 		gerador.getUsuario().setSenha(senhaCriptografada);
+		gerador.getUsuario().setEndereco(endereco);
 		boolean geradorCadastrado = geradorService.incluirGerador(gerador);
 		
 		// Se o gerador foi cadastrado, redireciona para a página inicial.
