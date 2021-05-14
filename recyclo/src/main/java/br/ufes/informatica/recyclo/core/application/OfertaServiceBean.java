@@ -78,7 +78,7 @@ public class OfertaServiceBean implements OfertaService {
 				.add("endereco", end)
 				.build();
 			
-			System.out.println("\033[31m" + jsobject.toString());
+			// System.out.println("\033[31m" + jsobject.toString());
 			builder = builder.add(jsobject);
 		}
 		JsonArray array = builder.build();
