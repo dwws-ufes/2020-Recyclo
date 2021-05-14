@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <!-- <meta http-equiv="refresh" content="0; URL='core/login/login.xhtml'"/> -->
+
+    <ui:define name="head">
+        <style type="text/css">
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="body">
+    	<h2>Bem-vindo, #{logonMB.currentUser}!</h2>
+        <br/>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box bg-aqua">
+                    <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+                    <div class="info-box-content" style="padding: 4px 10px">
+                    <span class="info-box-text" style="font-size: large">Saldo de CO<sub>2</sub></span>
+                    <span class="info-box-number">503 CO<sub>2</sub>e</span>
+                    <!-- The progress section is optional -->
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Continue o bom trabalho!
+                    </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box bg-yellow">
+                    <span class="info-box-icon"><i class="fa fa-trash-o"></i></span>
+                    <div class="info-box-content" style="padding: 4px 10px">
+                    <span class="info-box-text" style="font-size: large">Lixo Reciclado</span>
+                    <span class="info-box-number">503 kg</span>
+                    <!-- The progress section is optional -->
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Quase o peso de um fusca!
+                    </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- /.col -->
+            
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box bg-purple">
+                    <span class="info-box-icon"><i class="fa fa-map-marker"></i></span>
+                    <div class="info-box-content" style="padding: 4px 10px">
+                    <span class="info-box-text" style="font-size: large">Ranking Local</span>
+                    <span class="info-box-number">47º</span>
+                    <!-- The progress section is optional -->
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Arrasou! Top 50!
+                    </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box bg-green">
+                    <span class="info-box-icon"><i class="fa fa-globe"></i></span>
+                    <div class="info-box-content" style="padding: 4px 10px">
+                    <span class="info-box-text" style="font-size: large">Ranking Global</span>
+                    <span class="info-box-number">13680º</span>
+                    <!-- The progress section is optional -->
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Entre os 5% melhores recicladores!
+                    </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12" hidden="true">
+                <div class="card">
+                    <h3>Conquistas</h3>
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <i class="fa fa-trophy" style="color: rgb(165, 97, 42); font-size: xx-large;"></i>
+                            <br/>
+                        </f:facet>
+                
+                        <h:outputText value="Você reciclou 100kg!"/>
+                
+                    </p:panelGrid>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <!-- Mural de medalhas -->
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                
+            </div>
+        </div>
+
+		<!-- Botão de incluir oferta de material aparece apenas para gerador -->
+        <div class="row">
+            <div class="col-xs-12">
+                <p:commandButton styleClass="btn btn-success btn-block"
+                                 value="Incluir oferta de material"
+                                 rendered="#{logonMB.usuarioGerador}"/>
+            </div>
+        </div>
+        
+        <!-- Botão de realizar agendamento aparece apenas para coletor -->
+        <div class="row">
+            <div class="col-xs-12">
+                <p:commandButton styleClass="btn btn-success btn-block"
+                                 value="Realizar agendamento para coleta de material"
+                                 rendered="#{logonMB.usuarioColetor}"/>
+            </div>
+        </div>
+
+        <!-- <div>
+            <div class="box direct-chat" style="position: sticky; bottom: 0;">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Direct Chat</h3>
+                  <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="3 New Messages" class="badge bg-red">3</span>
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                     In box-tools add this button if you intend to use the contacts pane
+                    <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <div class="direct-chat-messages">
+                    <div class="direct-chat-msg">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                        <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+                      </div>
+                      <img class="direct-chat-img" src="../dist/img/user1-128x128.jpg" alt="message user image"/>
+                      <div class="direct-chat-text">
+                        Is this template really for free? That's unbelievable!
+                      </div>
+                    </div>
+                    <div class="direct-chat-msg right">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                        <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+                      </div>
+                      <img class="direct-chat-img" src="../dist/img/user3-128x128.jpg" alt="message user image"/>
+                      <div class="direct-chat-text">
+                        You better believe it!
+                      </div>
+                    </div>
+                </div>
+              
+                  <div class="direct-chat-contacts">
+                    <ul class="contacts-list">
+                      <li>
+                        <a href="#">
+                          <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg" alt="Contact Avatar">
+                          <div class="contacts-list-info">
+                            <span class="contacts-list-name">
+                              Count Dracula
+                              <small class="contacts-list-date pull-right">2/28/2015</small>
+                              </span>
+                            <span class="contacts-list-msg">How have you been? I was...</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="box-footer">
+                  <div class="input-group">
+                    <input type="text" name="message" placeholder="Type Message ..." class="form-control"/>
+                    <span class="input-group-btn">
+                              <button type="button" class="btn btn-danger btn-flat">Send</button>
+                              </span>
+                  </div>
+                </div>
+              </div>
+        </div> -->
+        
+    </ui:define>
+    
+    
+</ui:composition>

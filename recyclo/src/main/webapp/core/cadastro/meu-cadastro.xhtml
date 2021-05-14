@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="body">
+    	<h3>Meu cadastro</h3>
+		   
+	   		<!--  Nome  -->
+	   		<div class="form-group has-feedback">
+		        Nome <p:inputText value="#{logonMB.usuario.nome}" type="text" 
+		        styleClass="form-control"/>
+		   	</div>
+	        
+	        <!--  E-mail  -->
+	        <div class="form-group has-feedback">
+		        E-mail <p:inputText value="#{logonMB.usuario.email}" type="text" 
+		        styleClass="form-control"/>
+		    </div>
+	        
+	        <!-- Gerador -->
+	        <h:panelGroup rendered="#{logonMB.usuarioGerador}">
+	        
+	        	<!-- CPF -->
+	        	<h:panelGroup rendered="#{logonMB.usuario.tipoPessoa eq 'Fisica'}">
+	        		<div class="form-group has-feedback">
+			        	CPF <p:inputText value="#{logonMB.gerador.cpf}" type="text" 
+			        	styleClass="form-control"/>
+			       	</div>
+		        </h:panelGroup>
+	        	
+	        	<!-- CNPJ -->
+	        	<h:panelGroup rendered="#{logonMB.usuario.tipoPessoa eq 'Juridica'}">
+	        		<div class="form-group has-feedback">
+			        	CNPJ <p:inputText value="#{logonMB.gerador.cnpj}" type="text"
+			        	styleClass="form-control"/>
+			       	</div>
+	        	</h:panelGroup>
+	        
+	        </h:panelGroup>
+	       	
+	       	<!-- Coletor -->
+	        <h:panelGroup rendered="#{logonMB.usuarioColetor}">
+	        
+	        	<!-- CPF -->
+	        	<h:panelGroup rendered="#{logonMB.usuario.tipoPessoa eq 'Fisica'}">
+	        		<div class="form-group has-feedback">
+			        	CPF <p:inputText value="#{logonMB.coletor.cpf}" type="text" 
+			        	styleClass="form-control"/>
+			       	</div>
+		        </h:panelGroup>
+	        	
+	        	<!-- CNPJ -->
+	        	<h:panelGroup rendered="#{logonMB.usuario.tipoPessoa eq 'Juridica'}">
+	        		<div class="form-group has-feedback">
+			        	CNPJ <p:inputText value="#{logonMB.coletor.cnpj}" type="text"
+			        	styleClass="form-control"/>
+			       	</div>
+	        	</h:panelGroup>
+	        
+	        </h:panelGroup>
+
+    </ui:define>
+    
+    
+</ui:composition>

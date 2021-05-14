@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+	
+
+    <ui:define name="title">
+        <h:outputText value="#{msgsCore['featureName.title']}" />
+    </ui:define>
+
+    <ui:define name="description">
+        <h:outputText value="#{msgsCore['featureName.title.description']}" />
+    </ui:define>
+
+    <ui:define name="body">
+		<adm:breadcrumb link="/core/registration/index" title="#{msgsCore['featureName.title']}" />
+
+        <h1>Incluir oferta de material</h1><br/>
+
+        <h:form>
+
+            <div class="form-group has-feedback">
+	            <h:selectOneMenu id="listaMateriais" value="#{ofertaController.oferta.material}" styleClass="form-control"
+                style="margin-bottom: 15px; background-color: #fff" converter="omnifaces.SelectItemsConverter">
+                    <f:selectItem itemLabel="Material" itemValue="#{null}" noSelectionOption="true"/>
+				    <f:selectItems value="#{materialController.listaMateriais}" var="material" itemValue="#{material}" itemLabel="#{material.tipoMaterial}" />
+				</h:selectOneMenu>
+			</div>
+
+            <div class="form-group has-feedback">
+                <p:inputText id="qtdeMaterial" value="#{ofertaController.oferta.qtdeMaterial}" type="text" styleClass="form-control"
+                                placeholder=" Quantidade de Material (em Kg)" required="true"
+                                requiredMessage="Insira um valor em Kgs."/>
+                <i class="fa fa-cubes form-control-feedback" style="font-size: 18px"></i>
+            </div>
+
+            <div class="form-group has-feedback"> 
+                <p:datePicker id="time1" value="#{ofertaController.oferta.horarioInicial}" 
+                placeholder=" Data Inicial" showTime="true"/>
+                <i class="fa fa-clock-o form-control-feedback" style="font-size: 18px"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+                <p:datePicker id="time2" value="#{ofertaController.oferta.horarioFinal}" 
+                placeholder=" Data Final" showTime="true"/>
+                <i class="fa fa-clock-o form-control-feedback" style="font-size: 18px"></i>
+            </div>
+
+            <div class="row">
+                <p:spacer height="10"/>
+                <div class="col-xs-12">
+                    <p:commandButton styleClass="btn btn-success btn-block" action="#{ofertaController.incluirOferta}"
+                                     value="Cadastrar oferta"/>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $('.ui-inputfield').addClass('form-control').attr('autocomplete','off')
+                })
+            </script>
+        </h:form>
+
+    </ui:define>
+</ui:composition>

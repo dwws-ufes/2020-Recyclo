@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="body">
+    
+    	<!-- Definição de resíduo sólido -->
+    	<h3>Resíduo sólido</h3>
+    	<p:panel header="Definição">
+	    	<h:outputText value="#{saibaMaisView.definicaoResiduoSolido}"></h:outputText>  
+	    </p:panel>
+    	
+    	<!-- Definição de reciclagem -->
+    	<h3>Reciclagem</h3>
+    	<p:panel header="Definição">
+	    	<h:outputText value="#{saibaMaisView.definicaoReciclagem}"></h:outputText>  
+	    </p:panel>
+        
+        <!-- Materiais recicláveis -->
+        <h3>Materiais recicláveis</h3>
+        
+        <!-- Papel -->
+        <p:panel header="Papel">
+        	<h:outputText value="#{saibaMaisView.definicaoPapel}"></h:outputText>  
+	    </p:panel>
+        
+        <!-- Plástico -->
+        <p:panel header="Plástico">
+        	<h:outputText value="#{saibaMaisView.definicaoPlastico}"></h:outputText>  
+	    </p:panel>
+        
+        <!-- Vidro -->
+        <p:panel header="Vidro">
+        	<h:outputText value="#{saibaMaisView.definicaoVidro}"></h:outputText>  
+	    </p:panel>
+        
+        <!-- Metal -->
+        <p:panel header="Metal">
+        	<h:outputText value="#{saibaMaisView.definicaoMetal}"></h:outputText>  
+	    </p:panel>
+		   
+    </ui:define>
+    
+    
+</ui:composition>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="body">
+    	<h3>Minhas ofertas</h3>
+    	
+    	<p:dataTable var="oferta" value="#{ofertaController.ofertasGerador}">
+    		<p:column headerText="Código da oferta de material">
+                <h:outputText value="#{oferta.id}" />
+            </p:column>
+    	
+            <p:column headerText="Material">
+                <h:outputText value="#{oferta.material.tipoMaterial}" />
+            </p:column>
+
+            <p:column headerText="Quantidade">
+                <h:outputText value="#{oferta.qtdeMaterial}" />
+            </p:column>
+
+            <p:column headerText="Data inicial">
+                <h:outputText value="#{oferta.horarioInicial}" />
+            </p:column>
+
+            <p:column headerText="Data final">
+                <h:outputText value="#{oferta.horarioFinal}" />
+            </p:column>
+            
+            <p:column headerText="Coletada">
+                <h:outputText value="#{oferta.coletado == true ? 'Sim' : 'Não'}" />
+            </p:column>
+            
+            <p:column headerText="Data da coleta">
+                <h:outputText value="#{oferta.agendamento.horarioDaColeta}" />
+            </p:column>
+            
+            <p:column headerText="Coletor">
+                <h:outputText value="#{oferta.agendamento.coletor.usuario.nome}" />
+            </p:column>
+
+        </p:dataTable>
+
+        <script>
+            $(document).ready(function(){
+                $("td:nth-child(4)").each(function(){ 
+                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
+                    let dataFormatada = (
+                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
+                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
+                        data.getFullYear() +
+                     " " + data.getHours() + ":" + data.getMinutes(); 
+                    $(this).html(dataFormatada)
+                })
+
+                $("td:nth-child(5)").each(function(){ 
+                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
+                    let dataFormatada = (
+                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
+                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
+                        data.getFullYear() +
+                     " " + data.getHours() + ":" + data.getMinutes(); 
+                    $(this).html(dataFormatada)
+                })
+
+                $("td:nth-child(7)").each(function(){
+                	if (!$(this).is(':empty')){
+                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
+                    let dataFormatada = (
+                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
+                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
+                        data.getFullYear() +
+                     " " + data.getHours() + ":" + data.getMinutes(); 
+                    $(this).html(dataFormatada)}
+                })
+            })
+        </script>
+        
+    </ui:define>
+    
+    
+</ui:composition>

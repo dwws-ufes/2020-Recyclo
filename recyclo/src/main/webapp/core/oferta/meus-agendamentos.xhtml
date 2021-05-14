@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="body">
+    	<h3>Meus agendamentos</h3>
+    	
+    	<p:dataTable var="agendamento" value="#{agendamentoController.agendamentosColetor}">
+    		<p:column headerText="Código do agendamento">
+                <h:outputText value="#{agendamento.id}" />
+            </p:column>
+            
+            <p:column headerText="Código da oferta de material">
+                <h:outputText value="#{agendamento.oferta.id}" />
+            </p:column>
+    	
+            <p:column headerText="Material">
+                <h:outputText value="#{agendamento.oferta.material.tipoMaterial}" />
+            </p:column>
+
+            <p:column headerText="Quantidade">
+                <h:outputText value="#{agendamento.oferta.qtdeMaterial}" />
+            </p:column>
+
+			<p:column headerText="Gerador">
+                <h:outputText value="#{agendamento.gerador.usuario.nome}" />
+            </p:column>
+            
+            <p:column headerText="Data da coleta">
+                <h:outputText value="#{agendamento.horarioDaColeta}" />
+            </p:column>
+
+        </p:dataTable>
+        
+        <script>
+            $(document).ready(function(){
+                $("td:nth-child(6)").each(function(){ 
+                    data = new Date($(this).html().replace(" ",'T').concat("00Z"))
+                    let dataFormatada = (
+                        ('0' + data.getDate() ).slice(-2) ) + "/" + 
+                        ('0' + (data.getMonth() + 1) ).slice(-2) + "/" + 
+                        data.getFullYear() +
+                     " " + data.getHours() + ":" + data.getMinutes(); 
+                    $(this).html(dataFormatada)
+                })
+            })
+        </script>
+    	
+    	
+    </ui:define>
+    
+    
+</ui:composition>

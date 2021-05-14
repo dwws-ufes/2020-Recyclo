@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces">
+	
+    <h:head>
+        <title>Cadastro de Gerador</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="theme-color" content="#444"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+
+        <style type="text/css">
+            body .load-bar {
+               margin-top: -20px;
+            }   
+            /* below css hides growls in small screens and makes messages visible */
+            @media (max-width: 768px) {
+                body div.ui-growl {
+                    display: none;
+                }
+                body div.ui-messages {
+                    display: block;
+                }
+            }
+            /* below css hides messages in medium/big devices and makes growl visible in such devices */
+            @media (min-width: 769px) {
+                body div.ui-growl {
+                    display: block;
+                }
+
+                body div.ui-messages {
+                    display: none;
+                }
+            }
+            body.login-page {
+                background-color: transparent;
+            }
+            html {
+                background: url("#{resource['images/login-bg.jpeg']}") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+			@media (max-width: 768px) {
+                html {
+                    background-image: url("#{resource['images/login-bg-mobile.jpeg']}");
+                }
+			}
+        </style>
+    </h:head>
+
+    <h:body styleClass="hold-transition login-page">
+        <p:growl sticky="true">
+			<p:autoUpdate/>
+		</p:growl>
+        <div id="loader" class="load-bar" style="display: none">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <p:dialog id="adminStatusDialog" modal="true" widgetVar="statusDialog" draggable="false" closable="false"
+                  resizable="false" responsive="true" showHeader="false" appendTo="@(body)">
+            <p:graphicImage library="images" name="#{adminConfig.loadingImage}"/>
+        </p:dialog>
+
+        <div class="login-box">
+            <div class="login-logo" style="text-align: center !important; color: #FFF !important;">
+                <p:link href="index.xhtml" style="color: #FFF !important;"><b>Re</b>Cyclo</p:link>
+            </div>
+            <div class="box login-box-body">
+                <h:form>
+                    <p class="login-box-msg">Preencha as informações para cadastrar-se:</p>
+                    <p:messages closable="true"/>
+                    
+                    <!--  Nome -->
+                    <div class="form-group has-feedback">
+                        <p:inputText value="#{geradorController.gerador.usuario.nome}" type="text" styleClass="form-control"
+                                     placeholder="Nome" required="true"
+                                     requiredMessage="Informe seu nome completo."/>
+                        <i class="fa fa-user form-control-feedback"></i>
+                    </div>
+                    
+                    <!-- E-mail -->
+                    <div class="form-group has-feedback">
+                        <p:inputText value="#{geradorController.gerador.usuario.email}" type="email" styleClass="form-control"
+                                     placeholder="E-mail" required="true"
+                                     requiredMessage="Informe seu e-mail."/>
+                        <i class="fa fa-envelope form-control-feedback"></i>
+                    </div>
+                    
+                    <!-- Senha -->
+                    <div class="form-group has-feedback">
+                        <p:inputText value="#{geradorController.gerador.usuario.senha}" type="password" styleClass="form-control"
+                                     placeholder="Senha" required="true"
+                                     requiredMessage="Defina uma senha."/>
+                        <i class="fa fa-lock form-control-feedback"></i>
+                    </div>
+	                
+	                <!-- Documento-->
+                 	<div class="form-group has-feedback">
+	                    <p:selectOneMenu id="tipoDocumento" value="#{geradorController.gerador.usuario.tipoPessoa}" required="true" requiredMessage="Selecione o documento.">
+		                    <f:selectItem itemLabel="Documento" itemValue=""/>
+		                    <f:selectItem itemLabel="CPF" itemValue="Fisica"/>
+		                    <f:selectItem itemLabel="CNPJ" itemValue="Juridica"/>
+		                </p:selectOneMenu>
+	                </div>
+	                
+	                <!-- CPF ou CNPJ -->
+                    <div class="form-group has-feedback">
+                        <p:inputText value="#{geradorController.documento}" type="text" styleClass="form-control"
+                                     placeholder="CPF ou CNPJ (apenas números)" required="true"
+                                     requiredMessage="Informe o número do documento."/>
+                        <i class="fa fa-id-card form-control-feedback"></i>
+                    </div>
+                    
+                    <!--  Cadastrar-se -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p:commandButton styleClass="btn btn-success btn-block" action="#{geradorController.incluirGerador}"
+                                             value="Cadastrar-se!"/>
+                        </div>
+                    </div>
+
+                </h:form>
+
+            </div>
+            <!-- /.login-box-body -->
+        </div>
+        <adm:ripple />
+        <h:outputScript library="js" name="admintemplate.js" target="head"/>
+    </h:body>
+
+</ui:composition>
