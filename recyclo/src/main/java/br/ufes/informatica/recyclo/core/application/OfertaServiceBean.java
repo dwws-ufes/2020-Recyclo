@@ -66,7 +66,7 @@ public class OfertaServiceBean implements OfertaService {
 			} else {
 				end = e.getEnderecoCompleto();
 			}
-			System.out.println(e);
+			// System.out.println(e);
 			
 			JsonObject jsobject = Json.createObjectBuilder()
 				.add("material", mat)

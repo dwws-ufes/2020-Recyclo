@@ -38,6 +38,7 @@
                 var ofertaEnderecoArray = JSON.parse(jsonOfertasEnderecos);
                 
                 ofertaEnderecoArray.forEach((e) => {
+                    popupString = e.material + ": " + e.quantidade + "Kg"
                     $.ajax({
                         type: 'GET',
                         url: "https://nominatim.openstreetmap.org/search",
@@ -51,7 +52,7 @@
                         success: function(data, status){
                             var jsonData = data[0];
                             var marker = L.marker([jsonData.lat, jsonData.lon]).addTo(mymap);
-                            marker.bindPopup(`<b>${e.material}</b><br></br>${e.quantidade}`).openPopup();
+                            marker.bindPopup(popupString).openPopup();
                         }
                     });
                 });
